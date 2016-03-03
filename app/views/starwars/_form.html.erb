@@ -1,0 +1,17 @@
+<%= form_for(@starwar) do |f| %>
+  <% if @starwar.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@starwar.errors.count, "error") %> prohibited this starwar from being saved:</h2>
+
+      <ul>
+      <% @starwar.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
